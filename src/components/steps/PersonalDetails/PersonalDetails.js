@@ -1,26 +1,39 @@
 import React, { useState } from 'react';
-import { TextField } from '@material-ui/core';
 import StepForm from '../../StepForm/StepForm';
+import FormField from '../../FormField/FormField';
 
 export default function PersonalDetails(props) {
 
-    const [name, setName] = useState();
-    const [id, setId] = useState('');
+    const [name, setName] = useState('');
+    const [nameIsValid, setNameValid] = useState();
 
-    function isValid() {
-        return name && name.length &&
-            id && id.length === 9;
-    }
+    const [id, setId] = useState('');
+    const [idIsValid, setIdValid] = useState();
+
+    const formatId = (newId) => newId.substring(0, 9);
+    const idValidation = (idToValidate) => idToValidate.length === 9;
+
+    const isValid = () => [nameIsValid, idIsValid].every(valid => valid);
 
     return (
         <StepForm {...props} allowNext={isValid()}>
-            <TextField variant="outlined" type="text"
+            <FormField
                 label="Full Name"
-                onChange={(ev) => setName(ev.target.value)} />
-            <TextField variant="outlined" type="number"
-                helperText="Fill in a 9 digit ID number, including Check Digit" label="ID"
-                value={id}
-                onChange={(ev) => setId(ev.target.value.substring(0, 9))} />
+                onChange={setName}
+                setValidation={setNameValid}
+                defaultValue={name}
+            />
+            <FormField
+                type="number"
+                label="ID"
+                onChange={setId}
+                formatValue={formatId}
+                validation={idValidation}
+                setValidation={setIdValid}
+                helperText="Fill in a 9 digit ID number, including Check Digit"
+                errorText="ID Needs to be 9 digits long"
+                defaultValue={id}
+            />
         </StepForm>
     );
 }

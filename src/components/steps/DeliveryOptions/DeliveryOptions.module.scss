@@ -32,14 +32,27 @@
     .cityState {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding-right: 5%;
+        padding-left: 2%;
 
         .city {
-            flex: 2;
+            flex: 4.5;
+        }
+
+        .spacer {
+            flex: 1;
         }
 
         .state {
-            flex: 1;
+            flex: 2;
+
+            .helper {
+                color: #f44336;
+                position: absolute;
+                height: 100%;
+                top: 100%;
+            }
         }
     }
 }
