@@ -4,12 +4,14 @@ import { FormLabel, InputLabel, TextField } from '@material-ui/core';
 import StepForm from '../../StepForm/StepForm';
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 
+const TODAY = new Date().toISOString().split('T')[0]
+
 export default function PaymentMethod({ onNext, buttonText }) {
 
     const [selectedMethod, setSelectedMethod] = useState('credit');
 
     const [cardNumber, setCardNumber] = useState('');
-    const [expDate, setExpDate] = useState('');
+    const [expDate, setExpDate] = useState(TODAY);
     const [creditCode, setCreditCode] = useState('');
 
     const [paypalEmail, setPaypalEmail] = useState('');
