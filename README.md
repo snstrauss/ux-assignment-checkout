@@ -29,6 +29,8 @@ Helpful texts are under more complex fields, and appear in all fields, in the ca
 Run it Yourself
 ----
 ```
+$ git clone https://github.com/snstrauss/ux-assignment-checkout.git ux-checkout
+$ cd ux-checkout
 $ npm install
 $ npm run start
 ```
