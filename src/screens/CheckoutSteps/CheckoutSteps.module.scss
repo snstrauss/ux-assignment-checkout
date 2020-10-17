@@ -15,17 +15,6 @@
         flex: 1;
     }
 
-    .happyIconContainer {
-        height: 100%;
-        display: grid;
-        place-items: center;
-
-        svg {
-            color: #2ECC40;
-            transform: scale(10);
-        }
-    }
-
     :global{
         .MuiAccordion-root {
             $summary-color: #0074D9;

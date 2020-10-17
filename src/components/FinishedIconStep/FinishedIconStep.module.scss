@@ -1,0 +1,12 @@
+.happyIconContainer {
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    svg {
+        color: #2ECC40;
+        --size: 50vw;
+        height: var(--size);
+        width: var(--size);
+    }
+}

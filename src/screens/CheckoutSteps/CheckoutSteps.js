@@ -12,8 +12,7 @@ import PaymentMethod from '../../components/steps/PaymentMethod/PaymentMethod';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import HomeIcon from '@material-ui/icons/Home';
 import PaymentIcon from '@material-ui/icons/Payment';
-
-import TagFacesIcon from '@material-ui/icons/TagFaces';
+import FinishedIconStep from '../../components/FinishedIconStep/FinishedIconStep';
 
 const steps = [{
     title: 'Personal Details',
@@ -68,7 +67,7 @@ export default function CheckoutSteps() {
                 {
                     steps.map((step, idx) => {
 
-                        const StepForm = step.form;
+                        const CurrentStepForm = step.form;
                         const stepIsDone = doneSteps.has(idx);
 
                         return (
@@ -83,7 +82,7 @@ export default function CheckoutSteps() {
                                     }
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <StepForm onNext={() => done(idx)} buttonText={step.buttonText} />
+                                    <CurrentStepForm onNext={() => done(idx)} buttonText={step.buttonText} />
                                 </AccordionDetails>
                             </Accordion>
                         )
@@ -92,9 +91,7 @@ export default function CheckoutSteps() {
             </div>
             {
                 finishedAllSteps() &&
-                <div className={S.happyIconContainer}>
-                    <TagFacesIcon />
-                </div>
+                <FinishedIconStep />
             }
         </div>
     );
