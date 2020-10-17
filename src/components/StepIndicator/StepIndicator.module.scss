@@ -1,0 +1,16 @@
+.container {
+    $done-color: #2ECC40;
+    $summary-color: #0074D9;
+
+    .icon {
+        color:  darken($color: $summary-color, $amount: 30%);
+    }
+
+    .activeIcon {
+        color: $summary-color;
+    }
+
+    .doneIcon {
+        color: $done-color;
+    }
+}

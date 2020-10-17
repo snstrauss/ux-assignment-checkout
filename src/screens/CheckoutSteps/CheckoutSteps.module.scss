@@ -1,0 +1,60 @@
+.container {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    .steps {
+        flex: 8;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .indicator {
+        flex: 1;
+    }
+
+    .happyIconContainer {
+        height: 100%;
+        display: grid;
+        place-items: center;
+
+        svg {
+            color: #2ECC40;
+            transform: scale(10);
+        }
+    }
+
+    :global{
+        .MuiAccordion-root {
+            $summary-color: #0074D9;
+            &:before {
+                background-color: darken($summary-color, 70%);
+            }
+            .MuiAccordionSummary-root {
+                background-color: darken($color: $summary-color, $amount: 30%);
+                color: white;
+
+                &.Mui-expanded {
+                    background-color: $summary-color;
+                }
+
+                &.done-step {
+                    $done-color: #2ECC40;
+                    background-color: $done-color;
+
+                    .MuiAccordionSummary-content {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+
+            &.Mui-expanded {
+                flex: 1;
+                position: relative;
+            }
+        }
+    }
+}

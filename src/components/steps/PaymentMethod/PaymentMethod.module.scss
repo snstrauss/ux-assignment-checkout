@@ -1,0 +1,61 @@
+.container {
+    --margin: 2% 5%;
+
+    display: flex;
+    flex-direction: column;
+
+    .toggle {
+        margin: var(--margin);
+        display: flex;
+
+        & > button {
+            flex: 1;
+            font-size: 0.7rem;
+        }
+
+    }
+
+    .label {
+        margin: var(--margin);
+        margin-top: 5%;
+    }
+
+    .creditNum {
+        width: 90% !important;
+    }
+
+    .creditDetails {
+        display: flex;
+        align-items: center;
+        padding-right: 5%;
+
+        .expInput {
+            flex: 1;
+            margin: 5%;
+            position: relative;
+
+            .exp {
+                margin: 0;
+                width: unset;
+            }
+            .dateLabel {
+                position: absolute;
+                top: -30%;
+            }
+        }
+
+
+        .code {
+            flex: 1;
+            margin: 0;
+        }
+    }
+
+    .paypal {
+        margin-top: 5%;
+
+        .field {
+            width: 90%;
+        }
+    }
+}

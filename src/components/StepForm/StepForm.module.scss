@@ -1,0 +1,20 @@
+.container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    .next {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    :global {
+        .MuiTextField-root:not(.MuiFormControl-fullWidth) {
+            margin: 5%;
+            width: 70%;
+        }
+    }
+}

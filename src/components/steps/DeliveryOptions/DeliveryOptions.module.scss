@@ -1,0 +1,45 @@
+.container {
+    --margin: 2% 5%;
+
+    display: flex;
+    flex-direction: column;
+
+    .toggle {
+        margin: var(--margin);
+        display: flex;
+
+        & > button {
+            flex: 1;
+            font-size: 0.7rem;
+        }
+
+    }
+
+    .findStore {
+        margin: var(--margin);
+        font-size: 1.3rem;
+    }
+
+    .label {
+        margin: var(--margin);
+        margin-top: 5%;
+    }
+
+    .street {
+        width: 90% !important;
+    }
+
+    .cityState {
+        display: flex;
+        align-items: center;
+        padding-right: 5%;
+
+        .city {
+            flex: 2;
+        }
+
+        .state {
+            flex: 1;
+        }
+    }
+}
