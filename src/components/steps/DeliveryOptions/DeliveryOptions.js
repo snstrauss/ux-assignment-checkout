@@ -8,7 +8,7 @@ const usStates = ["AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", "DE", "F
     "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR",
     "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"];
 
-export default function DeliveryOptions({ onNext }) {
+export default function DeliveryOptions(props) {
 
     const [selectedMethod, setSelectedMethod] = useState('pickup');
 
@@ -24,7 +24,7 @@ export default function DeliveryOptions({ onNext }) {
     }
 
     return (
-        <StepForm onNext={onNext} allowNext={isValid()}>
+        <StepForm {...props} allowNext={isValid()}>
             <div className={S.container}>
                 <ToggleButtonGroup className={S.toggle} exclusive value={selectedMethod} onChange={(ev, selectedMethod) => setSelectedMethod(selectedMethod)} >
                     <ToggleButton value="pickup">

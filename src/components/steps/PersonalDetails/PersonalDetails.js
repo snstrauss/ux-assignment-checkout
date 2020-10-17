@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import StepForm from '../../StepForm/StepForm';
 
-export default function PersonalDetails({ onNext }) {
+export default function PersonalDetails(props) {
 
     const [name, setName] = useState();
     const [id, setId] = useState('');
@@ -13,7 +13,7 @@ export default function PersonalDetails({ onNext }) {
     }
 
     return (
-        <StepForm onNext={onNext} allowNext={isValid()}>
+        <StepForm {...props} allowNext={isValid()}>
             <TextField variant="outlined" type="text"
                 label="Full Name"
                 onChange={(ev) => setName(ev.target.value)} />

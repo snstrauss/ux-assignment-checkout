@@ -6,7 +6,7 @@ import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 
 const TODAY = new Date().toISOString().split('T')[0]
 
-export default function PaymentMethod({ onNext, buttonText }) {
+export default function PaymentMethod(props) {
 
     const [selectedMethod, setSelectedMethod] = useState('credit');
 
@@ -30,7 +30,7 @@ export default function PaymentMethod({ onNext, buttonText }) {
     }
 
     return (
-        <StepForm onNext={onNext} allowNext={isValid()} buttonText={buttonText}>
+        <StepForm {...props} allowNext={isValid()}>
             <div className={S.container}>
                 <ToggleButtonGroup className={S.toggle} exclusive value={selectedMethod} onChange={(ev, selectedMethod) => setSelectedMethod(selectedMethod)} >
                     <ToggleButton value="credit">
