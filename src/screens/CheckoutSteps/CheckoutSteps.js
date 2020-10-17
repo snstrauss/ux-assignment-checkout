@@ -62,7 +62,7 @@ export default function CheckoutSteps() {
     return (
         <div className={S.container}>
             <div className={S.indicator}>
-                <StepIndicator allSteps={steps} currentStep={currentStep} />
+                <StepIndicator allSteps={steps} currentStep={currentStep} goToStep={goToStep} />
             </div>
             <div className={S.steps}>
                 {
